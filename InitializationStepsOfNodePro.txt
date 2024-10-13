@@ -1,0 +1,3 @@
+1. ==> npm init --- To initialize npm
+2. ==> npm i express --- To install express.
+3. ==> npm i mongoose --- To install mongo DB.
