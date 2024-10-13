@@ -1,0 +1,15 @@
+==> mongosh - it is used to launch mongo DB.
+
+==> show dbs - used to see the list of db.
+
+==> use <db_name> - used to switch to another db.
+
+==> show collections - shows the existing documents in the db.
+
+==> db.coll_name.find() - Used to find any data from the db.
+
+==> db.coll_name.insert() - used to insert data within any collection.
+
+==========******** Connecting MongoDB with Node js ==========********
+
+npm i mongoose
