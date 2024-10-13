@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        label {
+            font-size: 17px;
+        }
+
+        input {
+            padding: 8px 30px;
+            margin: 10px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home |</title>
+</head>
+
+<body>
+    <% if (locals.user) { %>
+        <h2>Welcome <%= user %>, you are Registered Successfully!..
+        </h2>
+        <% } %>
+            <h1>Register Customers</h1>
+            <form action="/user" method="post"> <!-- In action the route of the post req is given -->
+                <label for="firstName">
+                    First Name<input type="text" placeholder="Syed" name="firstName"><br>
+                </label>
+                <label for="lastName">
+                    Last Name<input type="text" placeholder="Saqlain" name="lastName"> <br>
+                </label>
+                <label for="email">
+                    Email<input type="email" placeholder="abc@gmail.com" name="email"> <br>
+                </label>
+                <br>
+                <label for="submit">
+                    <input type="submit" value="Register Now">
+                </label>
+            </form>
+
+            <div>
+                <% if (locals.allData) { %>
+                    <table>
+
+                        <thead>
+                            <th>S.No</th>
+                            <th>Customer Name</th>
+                            <th>Email</th>
+                        </thead>
+                        <% allData.forEach((cus,i)=> { %>
+                            <tbody>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= cus.firstName %>
+                                        <%= cus.lastName %>
+                                </td>
+                                <td>
+                                    <%= cus.email %>
+                                </td>
+                            </tbody>
+                            <% }) %>
+
+                    </table>
+                    <% } %>
+            </div>
+</body>
+
+</html>
